@@ -43,6 +43,9 @@ gof.ergmm <- function (object, ..., nsim=100,
   obs.odeg<-pobs.odeg<-sim.odeg<-psim.odeg<-pval.odeg<-bds.odeg<-pval.odeg<-NULL
 
   n <- network.size(nw)
+  
+  # Remove simulation object to free up some memory & reduce the size of the gof object
+  rm(SimNetworkSeriesObj)
 
   # Calculate network statistics for the observed graph
   # Set up the output arrays of sim variables
